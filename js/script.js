@@ -9,9 +9,11 @@ const gitInvert = document.querySelector(".github");
 
 const projectsSection = document.getElementById("projects-link");
 const techAndToolsSection = document.getElementById("techs-and-tools-link");
+const aboutMeSection = document.getElementById("about-me-link");
 
 const projects = document.getElementById("projects-section");
-const techAndTools = document.getElementById("technologies-section");
+const techAndTools = document.getElementById("technologies-and-tools");
+const aboutMe = document.getElementById("about-me-section");
 
 // Mostrar el botón cuando el usuario haga scroll hacia abajo
 window.addEventListener("scroll", () => {
@@ -30,11 +32,15 @@ scrollTopBtn.addEventListener("click", () => {
 });
 
 projectsSection.addEventListener("click", () => {
-    window.scrollTo({ top: projects.offsetTop, behavior: "smooth" });
+    window.scrollTo({ top: projects.offsetTop + 28, behavior: "smooth" });
 });
 
 techAndToolsSection.addEventListener("click", () => {
     window.scrollTo({ top: techAndTools.offsetTop, behavior: "smooth" });
+});
+
+aboutMeSection.addEventListener("click", () => {
+    window.scrollTo({ top: aboutMe.offsetTop, behavior: "smooth" });
 });
 
 // Evento para el menú hamburguesa

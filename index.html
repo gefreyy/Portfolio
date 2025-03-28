@@ -4,10 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Home | My portfolio</title>
 </head>
@@ -23,7 +19,7 @@
                     <ul class="nav-menu">
                         <li><a class="nav-link" id="projects-link">PROJECTS</a></li>
                         <li><a class="nav-link" id="techs-and-tools-link">TECHNOLOGIES & TOOLS</a></li>
-                        <li><a class="nav-link" href="#">BLOG</a></li>
+                        <li><a class="nav-link" id="about-me-link">ABOUT ME</a></li>
                         <li><a class="nav-link btn btn-primary" href="mailto:g_efrey24@hotmail.com">CONTACT</a></li>
 
                         <div class="theme-switch">
@@ -47,7 +43,7 @@
     <section id="general-section">
         <div class="profile-image">
             <img src="assets/jea.png"/>
-            <h3>Hi I'm Gefrey</h3>
+            <h3>Hi I'm <span class="name-span">Gefrey</span></h3>
         </div>
         <div class="yapping">
             <h1>Building Digital</h1>
@@ -56,6 +52,7 @@
         </div>
         <a href="mailto:g_efrey24@hotmail.com">CONNECT WITH ME</a>
     </section>
+
     <hr class="separator">
 
     <section id="projects-section">
@@ -122,6 +119,7 @@
             </div>
         </div>
     </section>
+
     <hr class="separator">
 
     <div class="technologies-and-tools" id="technologies-and-tools">
@@ -192,21 +190,33 @@
             </div>
         </section>
     </div>
+
+    <hr class="separator">
+
+    <section id="about-me-section">
+        <div class="about-me-img"></div>
+        <div class="about-me">
+            <h1>About Me</h1>
+            <p>I'm a Frontend Developer and Visual Designer with experience in web design, brand identity, and product design. 
+                I have a passion for creating beautiful and functional digital experiences that engage users and drive results. 
+                I am always looking for new challenges and opportunities to learn and grow in my field.</p>
+            <p>In my free time, I enjoy exploring new technologies, working on personal projects, and contributing to open-source initiatives. 
+                I believe in the power of collaboration and community, and I am always eager to connect with like-minded individuals.</p>
+            <p>If you're interested in working together or just want to chat, feel free to reach out!</p>
+        </div>
+
+    </section>
     
     <footer>
-        <div class="contenedor-footer">
-            <p>gpuquio@gmail.com</p>
-            <div class="social-icons">
-                <a href="#"><img class="social" src="assets/facebook-icon.svg" alt="facebook"></a>
-                <a href="#"><img class="social" src="assets/x-icon.png" alt="x"></a>
-                <a href="https://www.linkedin.com/in/gefrey-charcape-puquio/"><img class="social" src="assets/linkedin-icon.svg" alt="linkedin"></a>
-                <a href="https://github.com/gefreyy"><img class="social" src="assets/github-icon.svg" alt="github"></a>
-            </div>
-            <p>Copyright © Gefrey 2025, All rights reserved</p>
+        <p>gpuquio@gmail.com</p>
+        <div class="social-icons">
+            <a href="#"><img class="social" src="assets/facebook-icon.svg" alt="facebook"></a>
+            <a href="#"><img class="social" src="assets/x-icon.png" alt="x"></a>
+            <a href="https://www.linkedin.com/in/gefrey-charcape-puquio/"><img class="social" src="assets/linkedin-icon.svg" alt="linkedin"></a>
+            <a href="https://github.com/gefreyy"><img class="social" src="assets/github-icon.svg" alt="github"></a>
         </div>
-        <!-- <div class="go-up-container"> -->
-            <button id="scrollTopBtn" class="scroll-top-btn"><img class="img-arrow-up" src="assets/up-arrow.png" alt="up-arrow" width="24"></button>
-        <!-- </div> -->
+        <p class="copyright">Copyright © Gefrey 2025, All rights reserved</p>
+        <button id="scrollTopBtn" class="scroll-top-btn"><img class="img-arrow-up" src="assets/up-arrow.png" alt="up-arrow" width="24"></button>
     </footer>
     <script src="js/script.js"></script>
 </body>

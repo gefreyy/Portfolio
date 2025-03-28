@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
-
+@import url(https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap);
 /* variables */
 :root {
     /* Colors */
@@ -54,7 +54,9 @@ body {
 }
 
 #hero {
-    min-width: 365px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar {
@@ -116,13 +118,20 @@ ul {
 .nav-menu {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.1rem; /* Espacio entre elementos */
 }
 
 .btn-primary {
-    background-color: #ffcd42;
+    background-color: rgb(255, 197, 88);
     padding: 0.8rem 2rem;
     border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: rgb(212, 163, 72);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .nav-menu .btn-primary {
@@ -133,27 +142,40 @@ ul {
     cursor: pointer;
 }
 
+.theme-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #switch {
     position: absolute;
     opacity: 0;
 }
 
+.toggle-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .toggle-icons > img {
     transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     width: 30px;
-  }
+}
   
-  .moon {
+.moon {
     transform: rotate(10deg);
-  }
+}
   
-  #switch:checked + .toggle-icons .moon {
+#switch:checked + .toggle-icons .moon {
     transform: rotate(250deg);
-  }
+}
   
-  #switch:checked + .toggle-icons .sun {
+#switch:checked + .toggle-icons .sun {
     transform: rotate(100deg);
-  }
+}
 
 /* hamburger */
 .hamburger {
@@ -176,8 +198,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
-    min-width: 365px;
+    min-height: 80dvh;
 }
 
 /*-------------------------------------------no hice esto xd----------------------------------------------*/
@@ -255,14 +276,19 @@ ul {
     margin-bottom: 1rem;
 }
 
+.name-span {
+    color: orange;
+}
+
 .yapping h1 {
-    font-size: 50px;
+    font-size: clamp(1rem, 7vw, 2.5rem);
     font-weight: 700;
     animation: text-pop-up-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .yapping p {
     width: 90%;
+    font-size: clamp(0.5rem, 3vw, 1rem);
     font-weight: 350;
     animation: text-pop-up-top-alt 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -273,6 +299,12 @@ ul {
     background-color: var(--bg-secondary);
     padding: 1rem;
     border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+#general-section a:hover {
+    background-color: rgb(255, 188, 63);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .separator {
@@ -288,6 +320,7 @@ ul {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 100dvh;
 }
 
 .projects-box {
@@ -324,7 +357,7 @@ ul {
     width: 100%;
     animation: appear linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 30%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -402,6 +435,8 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100dvh;
+    flex: 1;
 }
 
 #technologies-section {
@@ -530,20 +565,74 @@ ul {
     position: sticky;
 }
 
+#about-me-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem 3rem 3rem;
+    /* background: tomato; */
+    min-height: 100dvh;
+    gap: 1rem;
+}
+
+.about-me-img {
+    position: relative;
+    width: 50%;
+    min-height: 100dvh;
+    overflow: hidden;
+    transform: skew(30deg, 20deg);
+}
+
+.about-me-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/assets/profile.jpg") center/cover no-repeat;
+    transform: skew(-30deg, -20deg);
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+.about-me h1 {
+    font-size: clamp(1rem, 8vw, 6.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.about-me p {
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-weight: 350;
+    margin-bottom: 1rem;
+}
+
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
     background-color: #111111;
     color: white;
     text-align: center;
     padding: 2rem;
-    min-width: 365px;
 }
 
-.contenedor-footer {
-    width: 50%;
-    margin: 0 auto;
+.copyright {
+    font-size: clamp(0.6rem, 2vw, 1rem);
+    font-weight: 400;
 }
-
 
 .social-icons{
     display: flex;
@@ -556,6 +645,7 @@ footer {
 
 .social {
     width: 72%;
+    min-width: 10px;
 }
 
 .scroll-top-btn {
@@ -742,7 +832,7 @@ footer {
 
 /* Haciendo el menú hamburguesa */
 
-@media (max-width: 635px) {
+@media (max-width: 765px) {
     .nav-menu {
         position: fixed;
         right: -100vw; /* Oculto fuera de la pantalla */
@@ -788,8 +878,7 @@ footer {
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-6px) rotate(-45deg);
-    }
-
+    } 
 }
 
 @media (max-width: 1050px) {
@@ -807,8 +896,59 @@ footer {
 }
 
 @media (max-width: 990px) {
-    .project-aside-right, .project-aside {
+    /* .project-aside-right, .project-aside {
         width: 100%;
         max-width: 100%;
+    } */
+    
+    
+    .about-me-img {
+        min-height: 40dvh;
+        transform: skew(0deg, 0deg);
+        border-radius: 50%;
+        object-fit: cover;
+        flex: 1;
+        aspect-ratio: 1/1;
+        min-width: 400px;
+    }
+
+    .about-me-img::before {
+        transform: skew(0deg, 0deg);
+    }
+
+    .about-me {
+        margin: 0;
+        width: 100%;
+    }
+
+    .about-me h1, p {
+        text-align: center;
+    }
+
+    .about-me h1 {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+    }
+
+    .about-me p {
+        font-size: clamp(0.8rem, 2vw, .8rem);
+    }
+
+}
+
+@media (max-width: 835px) {
+    #about-me-section {
+        flex-direction: column;
+    }
+    .about-me-img {
+        min-width: 300px;
+        max-height: 300px;
     }
 }
+
+@media (max-width: 400px) {
+    .about-me-img {
+        min-width: 290px;
+        max-height: 290px;
+    }
+}
+
